@@ -29,7 +29,7 @@
 
 # DevJournal <a name="about-project"></a>
 
-**DevJournal** Is a RubyOnRails blog webapp for developers where the users can sign-up for an account then write articles, comment and like on other articels.
+**DevJournal** Is a RubyOnRails blog webapp for developers where the users can sign-up for an account then write articles, comment and like on other articles.
 ## 🛠 Built With <a name="built-with"></a>
 
 ### - Tech Stack <a name="tech-stack"></a>
