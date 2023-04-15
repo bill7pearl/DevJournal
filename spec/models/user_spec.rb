@@ -1,6 +1,6 @@
 require 'rails_helper'
 require 'shoulda/matchers'
-require_relative '../../app/models/user.rb'
+require_relative '../../app/models/user'
 
 RSpec.describe User, type: :model do
   describe 'associations' do
