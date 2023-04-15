@@ -20,13 +20,13 @@ RSpec.describe User, type: :model do
     let!(:post2) { create(:post, author: user, created_at: 2.days.ago) }
     let!(:post3) { create(:post, author: user, created_at: 3.days.ago) }
     let!(:post4) { create(:post, author: user, created_at: 4.days.ago) }
-  
+
     it 'returns the three most recent posts' do
       expect(user.three_recent_posts).to eq([post1, post2, post3])
     end
-  
+
     it 'does not include posts that are older than the three most recent' do
       expect(user.three_recent_posts).not_to include(post4)
     end
-  end  
+  end
 end
