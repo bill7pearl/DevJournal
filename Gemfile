@@ -79,6 +79,5 @@ end
 group :development, :test do
   gem 'factory_bot_rails'
 end
-
-gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'rails-controller-testing'
+gem 'rubocop', '>= 1.0', '< 2.0'
