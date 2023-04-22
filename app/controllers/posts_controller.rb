@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  def index; end
-
-  def show; end
-end
+  def index
+    @user = User.find(params[:user_id])
+    @post = @user.posts.order(created_at: :desc)
+  end
