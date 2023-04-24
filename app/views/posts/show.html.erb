@@ -9,7 +9,7 @@
 
 <div>
     <h2>comments</h2>
-<% @post.comments.each do |comment|%>
+<% @post.five_latest_comments.each do |comment|%>
 
 <p><%= comment.author.name %>:<%= comment.text%> </p>
 
