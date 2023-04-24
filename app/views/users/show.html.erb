@@ -1,1 +1,10 @@
 <h1>Selected user</h1>
+<img src="<%= @user.photo %>" alt="profile_pic">
+<%= @user.name%>
+<%= @user.posts_counter%>
+<%= @user.bio%>
+<% @user.three_latest_post.each do |d|%>
+  <p> <%= d.title %></p>
+    <p> <%= d.text %></p>
+<%end%>
+<%= link_to "see all posts", user_posts_path(@user)%>
