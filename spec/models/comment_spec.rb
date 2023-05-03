@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../../app/models/comments'
+require_relative '../../app/models/comment'
 
 RSpec.describe Comment, type: :model do
   subject do

@@ -1,6 +1,6 @@
 require 'rails_helper'
-require_relative '../../app/models/likes'
-require_relative '../../app/models/posts'
+require_relative '../../app/models/like'
+require_relative '../../app/models/post'
 
 RSpec.describe Like, type: :model do
   subject do
