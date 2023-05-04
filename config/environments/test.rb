@@ -60,10 +60,4 @@ Rails.application.configure do
 
   config.active_record.migration_error = :page_load
 
-  config.after_initialize do
-    Bullet.enable        = true
-    Bullet.bullet_logger = true
-    Bullet.raise         = true
-  end
-
 end

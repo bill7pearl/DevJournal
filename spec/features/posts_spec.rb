@@ -1,11 +1,11 @@
 require 'rails_helper'
 RSpec.describe 'Post show page', type: :feature do
   before :each do
-    @user1 = User.create(name: 'Tom', photo: 'https://picsum.photos/300/300', bio: 'Software Engineer from Nigeria')
-    @user2 = User.create(name: 'Daniel', photo: 'https://picsum.photos/200/400', bio: 'Software Engineer from Nigeria')
-    @post1 = Post.create(author: @user1, title: 'Great', text: 'Hello World!')
-    Comment.create(author: @user1, post: @post1, text: 'it is not 3 pm yet and already I have had a day')
-    Comment.create(author: @user1, post: @post1, text: 'what a post!')
+    @user1 = User.create(name: 'Bill', photo: 'https://picsum.photos/300/300', bio: 'Lorem ipsum')
+    @user2 = User.create(name: 'Djill', photo: 'https://picsum.photos/200/400', bio: 'Lorem ipsum')
+    @post1 = Post.create(author: @user1, title: 'Go', text: 'testtest')
+    Comment.create(author: @user1, post: @post1, text: 'testtesttesttest')
+    Comment.create(author: @user1, post: @post1, text: 'testtesttesttest2')
     Like.create(author: @user1, post: @post1)
     Like.create(author: @user2, post: @post1)
     visit user_post_path(@user2, @post1)
@@ -17,7 +17,7 @@ RSpec.describe 'Post show page', type: :feature do
     expect(page).to have_content(@post1.author.name)
   end
   it 'displays the comment count and like count' do
-    expect(page).to have_content('Comments:2 likes:2')
+    expect(page).to have_content('comments:2 likes:2')
   end
   it 'Show the post body' do
     expect(page).to have_content(@post1.text)
@@ -36,12 +36,12 @@ end
 
 RSpec.describe 'Posts index ', type: :feature do
   before do
-    @user1 = User.create(name: 'Ellon', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Migingo')
-    @user2 = User.create(name: 'Hassan', photo: 'https://picsum.photos/200/300', bio: 'Software Engineer from Uganda')
-    @post1 = Post.create(author: @user1, title: 'Great', text: 'Hello World!')
-    @post2 = Post.create(author: @user1, title: 'Howdy', text: 'This is test post.')
-    @comment1 = Comment.create(author: @user1, post: @post1, text: 'Today is sunny and calm')
-    Comment.create(author: @user1, post: @post1, text: 'Very good, lets go and Enjoy!')
+    @user1 = User.create(name: 'Jake', photo: 'https://picsum.photos/300/200', bio: 'testtesttest')
+    @user2 = User.create(name: 'Arms', photo: 'https://picsum.photos/200/300', bio: 'testtesttest2')
+    @post1 = Post.create(author: @user1, title: 'Go', text: 'testtest')
+    @post2 = Post.create(author: @user1, title: 'Go2', text: 'testtest2')
+    @comment1 = Comment.create(author: @user1, post: @post1, text: 'holahola')
+    Comment.create(author: @user1, post: @post1, text: 'awesome script!')
     visit user_posts_path(@user1)
   end
   it "displays user's profile picture" do
@@ -65,7 +65,7 @@ RSpec.describe 'Posts index ', type: :feature do
   end
 
   it "When I click on a post, it redirects me to that post's show page" do
-    click_link('Howdy')
+    click_link('Go2')
     expect(page).to have_current_path(user_post_path(@user1, @post2))
   end
 end
