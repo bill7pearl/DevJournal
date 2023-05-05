@@ -1,13 +1,20 @@
 <h1>All users</h1>
-
-<ul>
+<main class="users-container">
+<ul class="users">
   <% @users.each do |user| %>
-    <div class="pics">
+  <div class="user">
+    <div class="profile-pics">
    <img class="img" src="<%= user.photo %>" alt="profile_pic">
    </div>
-    <li class=>
+   <div class="profile-info">
+    <li class="username">
        <%= link_to user.name, user_path(user)%>
       <p class="post-count">Number of posts: <%= user.posts_counter || 0 %></p>
     </li>
+    </div>
+    </div>
   <% end %>
 </ul>
+<%= button_to "sign out", destroy_user_session_path, class: "destroy"%>
+</main>
+
