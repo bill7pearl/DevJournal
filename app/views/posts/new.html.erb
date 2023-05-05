@@ -1,4 +1,4 @@
-<div>
+<section>
   <h1>Create a Post</h1>
   <%= form_with model: @post ,url: user_posts_path do |f| %>
     <%= f.label :title, "Title" %>
@@ -6,4 +6,4 @@
     <%= f.text_area :text, placeholder: "Write here..", rows: 14, required: true %>
     <%= f.submit "Post" %>
   <% end %>
-</div>
+</section>
