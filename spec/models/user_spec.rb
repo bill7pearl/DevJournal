@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
     it { should validate_numericality_of(:posts_counter).only_integer.is_greater_than_or_equal_to(0) }
   end
 
-  describe 'three_recent_posts' do
+  describe 'three_latest_posts' do
     let(:user) { create(:author) }
     let!(:post1) { create(:post, author: user, created_at: 1.day.ago) }
     let!(:post2) { create(:post, author: user, created_at: 2.days.ago) }
@@ -22,11 +22,11 @@ RSpec.describe User, type: :model do
     let!(:post4) { create(:post, author: user, created_at: 4.days.ago) }
 
     it 'returns the three most recent posts' do
-      expect(user.three_recent_posts).to eq([post1, post2, post3])
+      expect(user.three_latest_posts).to eq([post1, post2, post3])
     end
 
     it 'does not include posts that are older than the three most recent' do
-      expect(user.three_recent_posts).not_to include(post4)
+      expect(user.three_latest_posts).not_to include(post4)
     end
   end
 end

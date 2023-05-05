@@ -1,5 +1,5 @@
 require 'rails_helper'
-require_relative '../../app/models/posts'
+require_relative '../../app/models/post'
 
 RSpec.describe Post, type: :model do
   # Test validations
